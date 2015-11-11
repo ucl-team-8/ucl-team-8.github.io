@@ -1,0 +1,6 @@
+.jekyll-metadata
+.sass-cache
+_site
+node_modules
+Thumbs.db
+.DS_Store

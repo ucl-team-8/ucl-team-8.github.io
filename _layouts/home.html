@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<div class="site-masthead">
+  <div class="wrapper">
+    <h1>{{ site.title }}</h1>
+    <p>{{ site.data.team | map: "name" | join: ", " }}</p>
+  </div>
+</div>
+
+<div class="site-content">
+  <div class="wrapper">
+    {{ content }}
+  </div>
+</div>

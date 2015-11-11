@@ -1,0 +1,35 @@
+# Site settings
+
+title: Train Service Real-Time Pattern Matching
+description: A UCL System Engineering project.
+baseurl: "/2015/group8" # the subpath of your site, e.g. /blog/
+url: "http://students.cs.ucl.ac.uk" # the base hostname & protocol for your site
+timezone: "Europe/London"
+
+# Build settings
+
+permalink: /blog/:year/:month/:day/:title/
+highlighter: pygments
+markdown: kramdown
+exclude:
+  - README.md
+  - Gemfile*
+  - node_modules
+  - package.json
+  - bower.json
+  - gulpfile.js
+  - deploy.sh
+
+sass:
+  sass_dir: assets/scss
+
+# Collections
+
+collections:
+
+defaults:
+
+# Gems
+
+gems:
+  - jekyll-redirect-from
