@@ -16,14 +16,40 @@ If no accurate record was kept, at the end of the day the operators need to manu
 Atos is a European IT services company that provides consulting, managed services and system integration. The company also provides management services to Network Rail. Essentially, Atos provides all of the resource planning, diagramming and the services to distribute data amongst multiple systems. But since the railway is very old and large organization, managing it is a very difficult task. Therefore our challenge is to an essential part of the entire system more efficient and effective.
 
 # Project Requirements
-+ Train Service Real Time Pattern Matching algorithms
-  + Using data from GPS, real time train service data (TRUST), train schedule data and train diagrams
-  + The algorithm should be able to handle real-time data
-  + Return a prediction for the services that a particular rolling stock has run
-  + This is used for more accurate mileage records that will help with servicing and maintaining the rolling stock
+We display to requirements in a MoSCoW format in order to prioritize certain tasks.
+
+### Must Have:
++ Train Service Real Time Pattern Matching Algorithm
+  + Uses data from GPS, real time train service data (TRUST), train schedule data and train diagrams
+  + The algorithm can handle real-time data
+  + Returns a list of units which have been identified as not matching their planned services
+  + Support basic scenarios
 + Prototype Application that uses the algorithm to match Rolling Stock to Services in real time from multiple data feeds
-  + The Application should have a web-based interface
-  + Simulate a real-time environment
+  + Application displays the output of the algorithm in a very simple format
+
+### Should Have:
++ The prototype application simulates a real-time environment
++ You can select any Rolling Stock, to get more accurate information
++ Track all Rolling Stock on a long-term to improve accuracy
++ Use additional information in the headcode of the Service to make predictions
++ Deploy system on Heroku
+
+### Could Have:
++ Predict a more accurate mileage record
++ Algorithm supports more complex scenarios, discussed in under discoveries
++ Visualizing the output data
++ Use additional open-data to return more accurate results
++ Test system using real data instead of test data
+
+### Would Like:
++ Returns the data in the same form as the diagrams and highlights where changes has happened
++ Compared the milage record obtained from the algorithm to the milage record calculated from all GPS events.
++ Handle situations where Rolling Stock go to the maintenance depot after running the Services.
+
+## Use Cases
+To describe the system and its requirements to a further extend, we will use some use cases.
+
+//TODO: See drive for use cases
 
 # Research
 The data that the algorithm has to consume is very extensive and has a lot of inconsistencies. Therefore understanding everything is the largest part of our research took a considerable amount of time. Next, we looked into efficient ways of storing everything and technologies that we will use for the back-end and the API. Finally, we analyzed various algorithms and compared their efficiency.
@@ -76,7 +102,7 @@ In addition to using the Diagrams, we will also be using the Genius Allocation, 
 Due to the fact that the Diagrams are considered as sensitive information, we are not able to show any.
 
 ### Trust Reports
-The Trust Reports, unlike the Schedule and the Diagrams, are real-time. Every track is divided into berths. At the border of 2 berths, there is a sensor, which creates a report every time a services passes. These reports are called Trust Reports and they provide us real-time information on the services. Some of the most important column headings are:
+The Trust Reports, unlike the Schedule and the Diagrams, are real-time. Every track is divided into berths. At the border of 2 berths, there is a sensor, which creates a report every time a service passes. These reports are called Trust Reports and they provide us real-time information on the services. Some of the most important column headings are:
 
 + Headcode - See Schedule
 + Tiploc - See Schedule
@@ -112,19 +138,58 @@ The GPS data is considered sensitive information therefore we cannot display any
 To discover any important data, we first used a node application to analyze the data from the feeds. The application calculated how often the value in a column is not null. Hence, we know which columns we can use reliably.
 
 //TODO: Daniel can you add stuff?
-Using the STOMP protocol, we could get the Trust Data in JSON.
 
 ### Visualization 1.0
 Understanding what the column headings mean was one part however actually understanding what the data means is another. We started going through the data by hand however this seemed to be inefficient. Therefore we started researching visualization technologies, like D3, to get a clear view on everything and identify common inconsistencies that our algorithm needs to be able to handle.
 
-//TODO: Add stuff
+For this visualization, we used D3 and we kept the UI relatively simple. In the top left corner, you can choose which Rolling Stock you want to analyze by selecting the appropriate gps_car_id. Then we display all of the GPS Reports of that Rolling Stock in the left column, ordered by time. We also state the type of the report and the Tiploc code of where the report was generated.
+
+Next, we use the Genius Allocations to find all of the Services that that particular Rolling Stock was planned to run. An algorithm goes through all the Trust Reports of these services and tries to match them to the correct GPS Report. We first check if the GPS Report is within a given time limit. Then we check if the event has the same Tiploc code and the same event type. If the algorithm finds a matching GPS Report for a given Trust Report, we display the Trust Report next to the appropriate GPS Report with a green circle. If no match if found, we still display the event but with a red circle.
+
+Now we can easily see if a Rolling Stock actually ran all of the services it was supposed to run, by simply looking at the amount and order of red and green circles.
 
 ## Infrastructure
-//TODO: Add stuff
-//Notes: We chose Flask because: Minimal, Extensible, Small, Easy to use with different services, everyone knows python, because daniel said so...
+In the beginning of the project, we researched various technologies and analyzed them to determine which ones were the most appropriate. Below is the full list of all the technologies we have used and why:
+
+### PostgreSQL
+#### Why a Database?
+We receive data in various different sources (JSON, csv files, txt files,...). Therefore querying and analyzing data is not always easy in their original form. So the team decided to have a database, to store all of the data.
+
+#### Why an SQL Database?
+Since some of the data is very inconsistent and is missing several values quite often, we first considered a NoSQL database since it would make storing the data very easy. However we noticed some relations between several data sources that we could express very naturally in an SQL database. Additionally, our algorithm will be querying and joining the data very often. Therefore the advantages of using an SQL database outweight the disadvantages.
+
+#### Why PostgeSQL?
+Now that we have decided to use an SQL database, we still had to choose from a wide range of options. After a considerable amount of research we found that PostgreSQL would be the most appropriate for several reasons:
++ PostgreSQL is a very powerful and extensible DBMS. A simple one would probably not suffice since we will perform several complex queries.
++ PostgreSQL is widely used, which means that there is a strong community that can offer support.
++ All of the software is open-source.
+
+### Flask
+We wanted to use a language that everyone in the team was already comfortable with. Therefore we decided on using Python for the backend and a web application for the frontend. However in order to use Python to create a web application, we needed a web framework.
+
+Everyone wanted a small, minimal framework with a very short learning curve so we could immediately start developing. Additionally, the framework had to be extensible so we could use it with PostgreSQL and any other technologies that we might decide on later. So since Flask checked all of these requirements, we decided to use it, together with various dependencies.
+
+#### SQLAlchemy and psycopg2
+SQLAlchemy is one of the most used tools to use SQL inside a Python application. Together with psycopg2, a Python adapter for PostgreSQL, we can use it to access our database. We mainly chose both tools because they are very easy to install through pip and to integrate with Flask. Additionally, there are a lot of examples, which use the same setup.
+
+#### Virtual Environment
+A Virtual Environment is a tool to keep all of the Python dependencies in the same place. In order to do so, virtualenv creates a folder with all of the necessary executable to use the packages. Therefore all of the team members do not need to worry about which version of a dependency they are using. This makes the development process a lot easier because we spend less time trying to configure each other's machines.
+
+### D3.js
+D3.js is a javascript library for manipulating HTML DOM elements based on data. There are a lot of javascript libraries for visualizations but D3.js is one of the most flexible ones. Even though it might not be easy to learn, the library will allow us to customize everything in the visualization. Additionally, there is a lot of documentation and examples available online that helped us to learn.
+
+So the overall infrastructure of our application looks like:
+//TODO: Add image (Its on drive)
 
 ## Algorithms
-Our first algorithm, was a simple statistical one. The program calculated how likely a Service was run by a particular Rolling Stock by calculating how many Trust Reports match with a GPS Report. Next, we combined that algorithm with our visualization to see how accurate it was. After careful evaluation, we concluded that it was not accurate enough and therefore we had to move on to a more complex version.
+Our first algorithm was a simple statistical one. The program calculated how likely a Service was run by a particular Rolling Stock by calculating how many Trust Reports match with a GPS Report. Next, we combined that algorithm with our visualization to see how accurate it was. After careful evaluation, we concluded that it was not accurate enough and therefore we had to move on to a more complex version.
+
+### Statistical Algorithm
+Like the first visualization, the statistical algorithm uses D3.js in order to display the results. The interface looks similar as well. In the top left corner, you can select the gps_car_id of the Rolling Stock you want to analyze. Then the algorithm lists all of the GPS Reports in the first column.
+
+Next, for all services, we compare all of the Trust Reports to the GPS Reports. Using that data, we can calculate how many Trust Reports match with a GPS Report and calculate the probability of a Rolling Stock running the service.
+
+Finally, we display all of the Services with a high enough probability. Every column, which represents a service, lists all of the Trust events and again, a green circle is shown if the Reports match and a red circle if no match is found.
 
 # Prototype
 The first iteration of our prototype, implemented the statistical algorithm. Essentially, it matched the Trust Reports to the GPS Reports by comparing the Tiploc codes and Event Types within a certain time limit. Next, the algorithm checked if the Unit was supposed to run that service and gave a preference to those Units. Finally, we calculated how the percentage of how likely a given Rolling Stock ran the services.
@@ -132,15 +197,15 @@ The first iteration of our prototype, implemented the statistical algorithm. Ess
 ## Discoveries
 We discovered various patterns that the algorithm has to take in consideration. For example it occurs often that 2 services run very close to each other. The current algorithm has difficulties distinguishing which rolling stock ran which service. Hence, in the next iteration of the algorithm, we will track the rolling stock long-term and analyze the headcode of the service to know which general direction it is going.
 
-Some other issues that we came across is that some trains run in circle and therefore we do not the the overall direction they are travelling in. Additionally, sometimes 2 Rolling Stock seem to run the same service (and they do) but at a certain point they split. Or the other way is possible as well, when 2 Rolling Stock join to run a service together.
+Some other issues that we came across is that some trains run in circle and therefore we do not know the overall direction they are travelling in. Additionally, sometimes 2 Rolling Stock seem to run the same service (and they do) but at a certain point they split. Or the other way is possible as well, when 2 Rolling Stock join to run a service together.
 
 Another important fact is that different types of trains tend to behave differently. For instance an Empty Coaching Stock is very unpredictable because they are not considered as important as Passenger Trains. They are also more likely to be affected by external factors therefore the algorithm will assign a higher probability of an Empty Coaching Stock changing than for example a Passenger Train. Additionally, several TOCs will turn the train around to manage crowd control.
 
-Finally, the GPS data can return results where for example a train seems to depart and arrive at the same station various times. This is because the GPS data divides the world up into several areas. If the train is first outside the area according to the GPS and then inside, a report will be generated where it arrives and the other way around. So if a Rolling Stock is parked near the border of an area for several hours, various reports might be generated where the the train keeps arriving and departing from the same station.
+Finally, the GPS data can return results where for example a train seems to depart and arrive at the same station various times. This is because the GPS data divides the world up into several areas. If the train is first outside the area according to the GPS and then inside, a report will be generated where it arrives and the other way around. So if a Rolling Stock is parked near the border of an area for several hours, various reports might be generated where the train keeps arriving and departing from the same station.
 //TODO: Include picture
 
 # User Interface
-//TODO: Check if you agree and add pictures
+//TODO: Add pictures + wireframe?
 
 We would like to have a couple of different screens, each displaying the results in a different way. First of all, the first screen will display all the changes that have already happened. Hence, the user can have a quick view if all the Rolling Stock are following the Diagrams or if something has not gone according to plan.
 
@@ -148,7 +213,7 @@ Then, the user will also be able to select a particular Rolling Stock, which wil
 Next, the user can also select to see the Diagrams of what actually happened and perhaps even compare them to the actual Diagrams.
 
 # Testing Strategies
-
+When developing the prototype, we tried to automate testing as much as possible. We will continue doing so in the second term, mainly by writing Unit Tests.
 
 ## Unit Tests
 We will have a test suite written for the main algorithm itself which includes:
