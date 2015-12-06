@@ -151,9 +151,9 @@ The GPS data is considered sensitive information therefore we cannot display any
 
 ### Node Feeds
 
-To discover any important data, we first used a node application to analyze the data from the feeds. The application calculated how often the value in a column is not null. Hence, we know which columns we can use reliably.
+To understand the data, we started with a simple Node.js application that consumed "train movements" messages from the Network Rail [data feeds](https://datafeeds.networkrail.co.uk/), which is realtime data of the locations of all the trains in the UK.
 
-    TODO: Daniel can you add stuff?
+The application stores every field that occurs, all the values it can have and how often they occur. It enabled us to roughly guess what the fields and values mean, which we found hard initially because of the lack of documentation, and it was also helpful in our meeting with the client, where he could go through explaining what each field and value means.
 
 ### Visualization 1.0
 
