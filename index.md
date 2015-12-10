@@ -50,7 +50,7 @@ We display to requirements in a MoSCoW format in order to prioritize certain tas
 
 ### Would Like:
 
-+ Returns the data in the same form as the diagrams and highlights where changes has happened
++ Returns the data in the same form as the diagrams and highlights where changes have happened
 + Compared the milage record obtained from the algorithm to the milage record calculated from all GPS events.
 + Handle situations where Rolling Stock go to the maintenance depot after running the Services.
 
@@ -257,3 +257,16 @@ We will have a test suite written for the main algorithm itself which includes:
 + Matching of event type
 + Matching headcodes with specific train types and rough destinations
 + Matching services to rolling stock with Genius Allocations
+
+# Achievements
++ Understanding all of the fields in the data. This includes the formats of various fields like headcode
++ We successfully visualized the data in various different ways
++ Design and wireframe the application
++ First version of a matching algorithm, which uses a statistical method to calculate probability of a Rolling Stock running A Service
++ Designed and wrote a Proof of Concept
+
+# Future Plans
++ Improving the matching function, which checks if a Trust Reports matches to a particular GPS Report
++ Change the matching algorithm to support real-time data
++ Using geographical data to visualize the Rolling Stock and Services
++ Improve the Proof of Concept
