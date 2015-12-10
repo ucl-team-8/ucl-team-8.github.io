@@ -12,7 +12,7 @@ layout: default
     </div>
     <div id="Requirements" class="panel-collapse collapse">
       <div class="panel-body">
-  		{% capture output %}{% include requirements.md %}{% endcapture %}
+  		{% capture output %}{% include_relative requirements.md %}{% endcapture %}
   		{{ output | markdownify }}
 <!--       <div class="panel-footer">Panel Footer</div> -->
     </div>
@@ -26,7 +26,7 @@ layout: default
     </div>
     <div id="Research" class="panel-collapse collapse">
       <div class="panel-body">
-      {% capture output %}{% include research.md %}{% endcapture %}
+      {% capture output %}{% include_relative research.md %}{% endcapture %}
       {{ output | markdownify }}
       </div>
 <!--       <div class="panel-footer">Panel Footer</div> -->
@@ -41,7 +41,7 @@ layout: default
     </div>
     <div id="Infrastructure" class="panel-collapse collapse">
       <div class="panel-body">
-      {% capture output %}{% include infrastructure.md %}{% endcapture %}
+      {% capture output %}{% include_relative infrastructure.md %}{% endcapture %}
       {{ output | markdownify }}
       </div>
 <!--       <div class="panel-footer">Panel Footer</div> -->
@@ -56,7 +56,7 @@ layout: default
     </div>
     <div id="Prototype" class="panel-collapse collapse">
       <div class="panel-body">
-      {% capture output %}{% include prototype.md %}{% endcapture %}
+      {% capture output %}{% include_relative prototype.md %}{% endcapture %}
       {{ output | markdownify }}
       </div>
 <!--       <div class="panel-footer">Panel Footer</div> -->
@@ -71,12 +71,9 @@ layout: default
     </div>
     <div id="Testing" class="panel-collapse collapse">
       <div class="panel-body">
-      {% capture output %}{% include testing.md %}{% endcapture %}
+      {% capture output %}{% include_relative testing.md %}{% endcapture %}
       {{ output | markdownify }}
       </div>
 <!--       <div class="panel-footer">Panel Footer</div> -->
     </div>
   </div>
-
-  
-<script src="{{ site.baseurl }}/assets/main.js"></script>
