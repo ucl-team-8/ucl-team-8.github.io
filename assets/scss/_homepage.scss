@@ -21,4 +21,53 @@
 .homepage-content {
   font-size: 17px;
   line-height: 1.5;
+
+  h1 {
+    font-size: 2em;
+    margin: 0 0 1em;
+    padding: 1.5em 0 0.25em;
+    border-bottom: 1px solid #ddd;
+  }
+
+  h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 1.5em 0 .75em;
+  }
+
+  h3 {
+    font-size: 1.0625em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    margin: 1.5em 0 .75em;
+  }
+
+  h4 {
+    margin: 1.25em 0 .5em;
+  }
+
+  #table-of-contents {
+    top: 40px;
+    width: 200px;
+
+    .headers {
+      margin-top: 50px;
+
+      li {
+        border-left: 3px solid transparent;
+
+        &.active {
+          font-weight: bold;
+          border-color: blue;
+        }
+      }
+
+      a {
+        margin: 0;
+        padding: 5px;
+        padding-left: 20px;
+      }
+    }
+  }
 }
