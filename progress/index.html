@@ -2,14 +2,14 @@
 layout: page
 ---
 
-<h1>Biweekly reports</h1>
+<h1 id="biweekly-reports">Biweekly reports</h1>
 
 {% for report in site.data.reports %}
   <h3><a href="{{ report.url }}">{{ report.title }}</a></h3>
 {% endfor %}
 
 
-<h1>Client Meeting Minutes</h1>
+<h1 id="client-meetings">Client Meeting Minutes</h1>
 
 {% for report in site.data.client_meetings %}
   <h3><a href=" {{ report.url }}">{{ report.title }}</a></h3>
@@ -18,6 +18,6 @@ layout: page
 {% capture markdown %}{% include_relative _achievements-and-future-plans.md %}{% endcapture %}
 {{ markdown | markdownify }}
 
-<h1>Gantt chart</h1>
+<h1 class="gantt-chart">Gantt chart</h1>
 
 <iframe src="https://docs.google.com/spreadsheets/d/10F9zoSCfLyPjqpSlW8t8wimdyQrF_eNzXiE-wSNlLq4/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false" style="width: 100%; height: 600px;"></iframe>
