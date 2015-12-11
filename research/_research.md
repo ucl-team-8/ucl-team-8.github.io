@@ -30,7 +30,7 @@ To understand the data, we will discuss the main column headings:
 + **Time** - Outlines when this event should happen.
 + **Event type** - Can be departure (D), arrival (A) or a pass through the station (P).
 + **Tiploc** - a code used to identify a location (station or junction).
-+ **CIF_UID** - Identifies a particular service, but unlike Headcode, it is unique.
++ **CIF_UID** - Identifies a particular service, but unlike Headcode, it is unique, on a given day.
 + **Schedule_days_run** - A 7 bit field that represent the days of the week the service is run
 + **Line** - If a service can run through more than 1 line, this field will specify which
 + **Pathing_allowance** - The time taken to cross a junction
@@ -172,7 +172,7 @@ Sometimes 2 Rolling Stock seem to run the same service (and they do) but at a ce
 
 ## Train travelling behaviours
 
-Another important fact is that different types of trains tend to behave differently. For instance an Empty Coaching Stock is very unpredictable because they are not considered as important as Passenger Trains. They are also more likely to be affected by external factors therefore the algorithm will assign a higher probability of an Empty Coaching Stock changing than for example a Passenger Train. Additionally, some companies may turn the train around to manage crowds.
+Another important fact is that different types of trains tend to behave differently. For instance an Empty Coaching Stock is very unpredictable because they are not considered as important as Passenger Trains. They are also more likely to be affected by external factors therefore the algorithm will assign a higher probability of an Empty Coaching Stock changing than for example a Passenger Train. Additionally, some companies may turn the train around to manage crowds or to make sure that the first class carriage is facing the correct way, which may mean travelling to the nearest track loop.
 
 ## Inaccurate reports
 
