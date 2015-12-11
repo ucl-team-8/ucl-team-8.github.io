@@ -58,6 +58,20 @@ To describe the system and its requirements to a further extend, we will use som
 
     TODO: See drive for use cases
 
+# Team Collaboration
+
+We decided to use Trello for sharing ideas and setting deadlines. Trello is a tool that allows you to communicate by creating lists, which contain cards. It is a very flexible tool that gives you an easy overview and quick access to important information.
+
+Next we still needed a way to share documents and collaborate on the creation of those documents. We found that Google Drive was an ideal solution since it was free and very easy-to-use.
+
+## Git - Source Control
+
+Since we all wanted to develop together, we had to use source control. This would allow us to make changes at the same time and if anything went wrong, we could simply revert back to the last commit.
+
+All of us were used to using Git and Github therefore we decided to use both. However someone would usually set up a repository and then everyone would contribute to that one. But for this project, we needed various repositories for different projects. Therefore we decided to set up an organization, so all of the repositories are in one place.
+
+Our organization's profile can be found on [this link](https://github.com/ucl-team-8).
+
 # Research
 
 The data that the algorithm has to consume is very extensive and has a lot of inconsistencies. Understanding the data we are given has been the largest focus of our research, and took a considerable amount of time. Next, we looked into efficient ways of storing everything and technologies that we will use for the back-end and the API. Finally, we analyzed various algorithms and compared their efficiency.
