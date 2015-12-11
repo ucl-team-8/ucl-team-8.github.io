@@ -17,3 +17,7 @@ Like the first visualization, the statistical algorithm uses D3.js in order to d
 Next, for all services, we compare all of the Trust Reports to the GPS Reports. Using that data, we can calculate how many Trust Reports match with a GPS Report and calculate the probability of a Rolling Stock running the service.
 
 Finally, we display all of the Services with a high enough probability. Every column, which represents a service, lists all of the Trust events and again, a green circle is shown if the Reports match and a red circle if no match is found.
+
+## API Endpoints
+
+Our prototype uses two main API endpoints to serve data, one for GPS and the other for TRUST data. These are used to fuel the data visualisations. They are located at [**/events/gps.json**](http://	atos-service.herokuapp.com/events/gps.json) and [**/events/trust.json**](http://atos-service.herokuapp.com/events/trust/json)
