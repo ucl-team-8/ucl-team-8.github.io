@@ -2,13 +2,13 @@
   url: /
 
 - title: About
-  url: /about
+  url: /about/
 
 - title: Research
-  url: /research
+  url: /research/
 
 - title: Proof of Concept
-  url: /proof-of-concept
+  url: /proof-of-concept/
 
 - title: Progress
-  url: /progress 
+  url: /progress/
