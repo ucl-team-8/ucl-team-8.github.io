@@ -1,15 +1,35 @@
 ---
 layout: default
 ---
+
 <div class="site-masthead">
-  <div class="wrapper">
+  <div class="wrapper container-fluid">
+
     <h1>{{ site.title }}</h1>
-    <p>{{ site.data.team | map: "name" | join: ", " }}</p>
+
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+        <p>
+          Train operating companies have to deal with a major safety issue&mdash;how often should they maintain their trains? Maintenance periods largely depend on the distance a rolling stock has travelled, but due to disruptions, companies can lose track of which service is run by which rolling stock, and are therefore unable to calculate exact mileage.
+        </p>
+
+        <p>
+          We are helping them solve this problem by writing an algorithm that uses existing data streams to <strong>match services to rolling stock in real time</strong>.
+        </p>
+      </div>
+    </div>
+
+    <iframe class="video" width="640" height="360" src="https://www.youtube.com/embed/ridGlh85LbI" frameborder="0" allowfullscreen></iframe>
+
   </div>
 </div>
 
 <div class="site-content">
-  <div class="wrapper">
-    {{ content }}
+  <div class="wrapper container-fluid">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        {{ content }}
+      </div>
+    </div>
   </div>
 </div>

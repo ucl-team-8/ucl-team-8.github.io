@@ -1,0 +1,9 @@
+.github {
+  opacity: 0.5;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2;
+}
+
+.github:hover {
+  opacity: 0.3;
+}

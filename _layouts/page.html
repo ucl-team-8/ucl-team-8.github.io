@@ -2,81 +2,17 @@
 layout: default
 ---
 
-<div class="panel-group">
-
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" href="#Requirements">Requirements</a>
-      </h4>
-    </div>
-    <div id="Requirements" class="panel-collapse collapse">
-      <div class="panel-body">
-  		{% capture output %}{% include requirements.md %}{% endcapture %}
-  		{{ output | markdownify }}
-<!--       <div class="panel-footer">Panel Footer</div> -->
-    </div>
-  </div>
-
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" href="#Research">Research</a>
-      </h4>
-    </div>
-    <div id="Research" class="panel-collapse collapse">
-      <div class="panel-body">
-      {% capture output %}{% include research.md %}{% endcapture %}
-      {{ output | markdownify }}
+<div class="site-content">
+  <div class="wrapper container-fluid">
+    <div class="row">
+      <div class="col-md-3">
+        <nav id="table-of-contents">
+          <ul class="nav headings"></ul>
+        </nav>
       </div>
-<!--       <div class="panel-footer">Panel Footer</div> -->
-    </div>
-  </div>
-
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" href="#Infrastructure">Infrastructure</a>
-      </h4>
-    </div>
-    <div id="Infrastructure" class="panel-collapse collapse">
-      <div class="panel-body">
-      {% capture output %}{% include infrastructure.md %}{% endcapture %}
-      {{ output | markdownify }}
+      <div class="col-md-9">
+        {{ content }}
       </div>
-<!--       <div class="panel-footer">Panel Footer</div> -->
     </div>
   </div>
-
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" href="#Prototype">Prototype</a>
-      </h4>
-    </div>
-    <div id="Prototype" class="panel-collapse collapse">
-      <div class="panel-body">
-      {% capture output %}{% include prototype.md %}{% endcapture %}
-      {{ output | markdownify }}
-      </div>
-<!--       <div class="panel-footer">Panel Footer</div> -->
-    </div>
-  </div>
-
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" href="#Testing">Testing</a>
-      </h4>
-    </div>
-    <div id="Testing" class="panel-collapse collapse">
-      <div class="panel-body">
-      {% capture output %}{% include testing.md %}{% endcapture %}
-      {{ output | markdownify }}
-      </div>
-<!--       <div class="panel-footer">Panel Footer</div> -->
-    </div>
-  </div>
-
-  
-<script src="{{ site.baseurl }}/assets/main.js"></script>
+</div>

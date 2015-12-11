@@ -1,5 +1,5 @@
 cd "$(dirname "$0")"
-jekyll build
+jekyll build --config _config.yml,_config_deploy.yml
 
 if [ -z ${CSUSER+x} ]; then
   printf "\nEnter CS username: "
