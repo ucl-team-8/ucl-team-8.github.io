@@ -16,7 +16,7 @@ We will have a test suite written for the main algorithm itself which includes:
 + Matching headcodes with specific train types and rough destinations
 + Matching services to rolling stock with Genius Allocations
 
-## Funcitonal Tests 
+## Functional Tests
 
 Aside from the algorithm itself, we plan on using [**Selenium**](http://www.seleniumhq.org) to automatically test the web application.
 
