@@ -1,12 +1,11 @@
 $(function() {
 
-  var headings = $(".site-content").find("h2");
+  var headings = $(".site-content").find("h1");
   var contents = $("#table-of-contents");
-
-  var listOfHeaders = contents.find(".headers");
+  var listOfHeadings = contents.find(".headings");
 
   headings.each(function(i, elem) {
-    listOfHeaders.append('<li><a href="#' + elem.id + '">' + elem.textContent.trim() + '</a></li>');
+    listOfHeadings.append('<li><a href="#' + elem.id + '">' + elem.textContent.trim() + '</a></li>');
   });
 
   contents.affix({
@@ -20,6 +19,6 @@ $(function() {
     }
   })
 
-  $('body').scrollspy({ target: '#table-of-contents', offset: 80 });
+  $('body').scrollspy({ target: '#table-of-contents', offset: 50 });
 
 });

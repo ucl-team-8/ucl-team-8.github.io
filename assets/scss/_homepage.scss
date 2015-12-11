@@ -22,6 +22,20 @@
   font-size: 17px;
   line-height: 1.5;
 
+  .table {
+    th {
+      background-color: #eee;
+    }
+  }
+
+  a {
+    text-decoration: underline;
+
+    &:hover {
+      color: #555;
+    }
+  }
+
   h1 {
     font-size: 2em;
     margin: 0 0 1em;
@@ -51,23 +65,29 @@
     top: 40px;
     width: 200px;
 
-    .headers {
-      margin-top: 50px;
+    .headings {
+      margin-top: 40px;
 
       li {
         border-left: 3px solid transparent;
 
         &.active {
-          font-weight: bold;
-          border-color: blue;
+          border-color: #3A88E8;
         }
       }
 
       a {
+        color: #666;
         margin: 0;
         padding: 5px;
         padding-left: 20px;
+        text-decoration: none;
+      }
+
+      li.active a {
+        color: black;
       }
     }
   }
+
 }

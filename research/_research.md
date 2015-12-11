@@ -1,14 +1,14 @@
-# Research
-
+<p class="lead" style="margin-top: 50px;">
 The data that the algorithm has to consume is very extensive and has a lot of inconsistencies. Understanding the data we are given has been the largest focus of our research, and took a considerable amount of time. Next, we looked into efficient ways of storing everything and technologies that we will use for the back-end and the API. Finally, we analyzed various algorithms and compared their efficiency.
+</p>
 
-## Data
+# Data
 
 Most of the data can be broken down into 4 main parts: The Schedule, Diagrams, Trust Reports and GPS Reports. There are also some additional parts like geographical locations for all tiploc codes and tables that map the unit codes into a particular gps_car_id (more on this later), however they are static and should rarely change.
 
 We will try to outline some of the data, without going into too many details.
 
-### Schedule
+## Schedule
 
 The Schedule is used to outline where a particular train should be at a point in time. For example it might state that the service with headcode 5A21 might depart A at 9am.
 
@@ -39,7 +39,7 @@ The main part of the Schedule is usually set for several months. However a new c
 
 Additional information can be found [here](http://nrodwiki.rockshore.net/index.php/SCHEDULE).
 
-### Diagrams
+## Diagrams
 
 After the Schedule has been created, we still need to know which Rolling Stock will run which Service. Hence, every Rolling Stock has a Diagram that outlines the services it will run on a particular day.
 
@@ -53,7 +53,7 @@ In addition to using the Diagrams, we will also be using the Genius Allocation, 
 
 Due to the fact that the Diagrams are considered as sensitive information, we are not able to show any.
 
-### Trust Reports
+## Trust Reports
 
 The Trust Reports, unlike the Schedule and the Diagrams, are real-time. Every track is divided into berths. At the border of 2 berths, there is a sensor, which creates a report every time a service passes. These reports are called Trust Reports and they provide us real-time information on the services. Some of the most important column headings are:
 
@@ -71,7 +71,7 @@ One problem with TRUST reports is their delay. A report can be off by several mi
 
 We can get the Trust Reports using the STOMP Protocol through the [Network Rail Datafeeds website](http://datafeeds.networkrail.co.uk). Additional information can be found on [this website](http://nrodwiki.rockshore.net/index.php/Train_Movements).
 
-### GPS Reports
+## GPS Reports
 
 The GPS reports are used to find the location of the Rolling Stock. We mainly use the GPS and Trust Reports to find which Rolling Stock is running which service. The essential column headings are:
 
@@ -86,9 +86,9 @@ There are a couple of examples where GPS does not work well. One of them is in t
 
 The GPS data is considered sensitive information therefore we cannot display any examples.
 
-## Visualisations
+# Visualisations
 
-### Node Feeds
+## Node Feeds
 
     TODO: add link to visualisation
 
@@ -96,7 +96,7 @@ To understand the data, we started with a simple Node.js application that consum
 
 The application stores every field that occurs, all the values it can have and how often they occur. It enabled us to roughly guess what the fields and values mean, which we found hard initially because of the lack of documentation, and it was also helpful in our meeting with the client, where he could go through explaining what each field and value means.
 
-### TRUST & GPS event matching
+## TRUST & GPS event matching
 
     TODO: add link to visualisation
 
@@ -108,21 +108,21 @@ Next, we use the Genius Allocations to find all of the Services that that partic
 
 Now we can easily see if a Rolling Stock actually ran all of the services it was supposed to run, by simply looking at the amount and order of red and green circles.
 
-## Infrastructure
+# Infrastructure
 
 In the beginning of the project, we researched various technologies and analyzed them to determine which ones were the most appropriate. Below is the full list of all the technologies we have used and why:
 
-### PostgreSQL
+## PostgreSQL
 
-#### Why a Database?
+### Why a Database?
 
 We receive data in various different sources (JSON, CSV, text files). Therefore querying and analyzing data is not always easy in their original form. So the team decided to have a database, to store all of the data.
 
-#### Why an SQL Database?
+### Why an SQL Database?
 
 Since some of the data is very inconsistent and is missing several values quite often, we first considered a NoSQL database since it would make storing the data very easy. However, we noticed some relations between several data sources that we could express very naturally in an SQL database. Additionally, our algorithm will be querying and joining the data very often. Therefore the advantages of using an SQL database outweighed the disadvantages.
 
-#### Why PostgeSQL?
+### Why PostgeSQL?
 
 Now that we have decided to use an SQL database, we still had to choose from a wide range of options. After some research we found that PostgreSQL would be the most appropriate for several reasons:
 
@@ -130,22 +130,22 @@ Now that we have decided to use an SQL database, we still had to choose from a w
 + PostgreSQL is widely used, which means that there is a strong community that can offer support.
 + It's open-source.
 
-### Flask
+## Flask
 
 We wanted to use a object-oriented language that everyone in the team was already comfortable with. Thus essentially we had to choose between Python and Java. However Python seemed more appropriate because it is dynamically typed, it also is a lot more concise and therefore also easier to read and debug and then finally, Python is a very compact and powerful language.
 Therefore, we decided on using Python for the backend and a web application for the frontend. But in order to use Python to create a web application, we needed a web framework.
 
 Everyone wanted a small, minimal framework with a very short learning curve so we could immediately start developing. Additionally, the framework had to be extensible so we could use it with PostgreSQL and any other technologies that we might decide on later. So since Flask checked all of these requirements, we decided to use it, together with various dependencies.
 
-#### SQLAlchemy and psycopg2
+### SQLAlchemy and psycopg2
 
 SQLAlchemy is one of the most used tools to use SQL inside a Python application. Together with psycopg2, a Python adapter for PostgreSQL, we can use it to access our database. We mainly chose both tools because they are very easy to install through pip and to integrate with Flask. Additionally, there are a lot of examples, which use the same setup.
 
-#### Virtual Environment
+### Virtual Environment
 
 A Virtual Environment is a tool to keep all of the Python dependencies in the same place. In order to do so, virtualenv creates a folder with all of the necessary executable to use the packages. Therefore all of the team members do not need to worry about which version of a dependency they are using. This makes the development process a lot easier because we spend less time trying to configure each other's machines.
 
-### D3.js
+## D3.js
 
 D3.js is a JavaScript library for manipulating HTML DOM elements based on data. There are a lot of JavaScript libraries for visualizations, but D3.js is one of the most flexible ones. Even though it might not be easy to learn, the library will allow us to customize everything in the visualization. Additionally, there is a lot of documentation and examples available online that helped us to learn.
 
@@ -156,24 +156,24 @@ So the overall infrastructure of our application looks like:
 ### Heroku
 Heroku is a could-based application platform that aims to make building, deploying and scaling a lot easier. Therefore we would not have to worry about deployment because it abstracts away a lot of the SysAdmin work. Thus we can focus on the actual algorithm and prototype. Another reason why we use Heroku is because it allows us to automate a large part of the deployment process. We simply have to push our code to the server and then deployment is automated from there on. In general, Heroku seemed to have a lot of advantages over traditional deployment on an amazon EC2 instance.
 
-## Discoveries
+# Discoveries
 
-### Trains runnning close to each other
+## Trains runnning close to each other
 
 It sometimes happens that 2 services are travelling very close to each other. The current algorithm has difficulties distinguishing which rolling stock ran which service. Hence, in the next iteration of the algorithm, we will track the rolling stock long-term and analyze the headcode of the service to know which general direction it is going.
 
-### Trains running in a loop
+## Trains running in a loop
 
 Another issue we came across is trains running in a circle, where we don't know the overall direction they are travelling in.
 
-### Service run by multiple rolling stock
+## Service run by multiple rolling stock
 
 Sometimes 2 Rolling Stock seem to run the same service (and they do) but at a certain point they split. Or the other way is possible as well, when 2 Rolling Stock join to run a service together.
 
-### Train travelling behaviours
+## Train travelling behaviours
 
 Another important fact is that different types of trains tend to behave differently. For instance an Empty Coaching Stock is very unpredictable because they are not considered as important as Passenger Trains. They are also more likely to be affected by external factors therefore the algorithm will assign a higher probability of an Empty Coaching Stock changing than for example a Passenger Train. Additionally, some companies may turn the train around to manage crowds.
 
-### Inaccurate reports
+## Inaccurate reports
 
 The GPS data can sometimes repeately report arrivals and departures of the same train, at the same station, even though the train itself is stationary. This is because the GPS data divides the world up into several areas. If the train is first outside the area according to the GPS and then inside, a report will be generated where it arrives and the other way around. So if a Rolling Stock is parked near the border of an area for several hours, various reports might be generated where the train keeps arriving and departing from the same station.

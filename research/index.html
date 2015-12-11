@@ -2,13 +2,8 @@
 layout: page
 ---
 
-<div class="site-content">
-  <div class="row">
-    <div class="col-md-10 col-md-offset-1">
-      {% capture markdown %}{% include_relative _research.md %}{% endcapture %}
-      {{ markdown | markdownify }}
-      <img src="{{ site.baseurl }}/assets/photos/interesting_data_point.png" style="height: 250px;"/>
-    </div>
-  </div>
-</div>
+{% capture markdown %}{% include_relative _research.md %}{% endcapture %}
+{{ markdown | markdownify }}
+
+<img src="{{ site.baseurl }}/assets/photos/interesting_data_point.png" style="height: 250px;"/>
 <script type="text/javascript" src="https://www.draw.io/js/embed-static.min.js"></script>
