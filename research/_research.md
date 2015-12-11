@@ -88,17 +88,21 @@ The GPS data is considered sensitive information therefore we cannot display any
 
 # Visualisations
 
-## Node Feeds
+## Node Feeds ([see demo]({{ site.baseurl }}/visualisations/node-feeds))
 
-    TODO: add link to visualisation
+<a href="{{ site.baseurl }}/visualisations/node-feeds">
+  <img src="{{ site.baseurl }}/assets/photos/vis-node-feeds.png" style="width: 50%; float: right">
+</a>
 
 To understand the data, we started with a simple Node.js application that consumed "train movements" messages from the Network Rail [data feeds](https://datafeeds.networkrail.co.uk/), which is realtime data of the locations of all the trains in the UK.
 
 The application stores every field that occurs, all the values it can have and how often they occur. It enabled us to roughly guess what the fields and values mean, which we found hard initially because of the lack of documentation, and it was also helpful in our meeting with the client, where he could go through explaining what each field and value means.
 
-## TRUST & GPS event matching
+## TRUST & GPS event matching ([see demo]({{ site.baseurl }}/visualisations/event-matching))
 
-    TODO: add link to visualisation
+<a href="{{ site.baseurl }}/visualisations/event-matching">
+  <img src="{{ site.baseurl }}/assets/photos/vis-event-matching.png" style="width: 40%; float: right">
+</a>
 
 Understanding what the column headings mean was one part however actually understanding what the data means is another. We started going through the data by hand however this seemed to be inefficient. Therefore, we started researching visualization technologies, like D3, to get a clear view on everything and identify common inconsistencies that our algorithm needs to be able to handle.
 

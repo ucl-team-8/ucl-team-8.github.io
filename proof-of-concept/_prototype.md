@@ -6,9 +6,11 @@ The first iteration of our prototype, implemented the statistical algorithm. Ess
 
 The first algorithm we used was a simple statistical one, and it was used in last year's project. It calculated how likely a Service was run by a particular Rolling Stock by calculating how many Trust Reports match with a GPS Report. Next, we combined that algorithm with our visualization to see how accurate it was. After careful evaluation, we concluded that it was not accurate enough and therefore we had to move on to a more complex version.
 
-### Statistical Algorithm
+### Statistical Algorithm ([see demo]({{ site.baseurl }}/visualisations/algorithm))
 
-    TODO: Add link to visualisation
+<a href="{{ site.baseurl }}/visualisations/algorithm">
+  <img src="{{ site.baseurl }}/assets/photos/vis-algorithm.png" style="width: 100%">
+</a>
 
 Like the first visualization, the statistical algorithm uses D3.js in order to display the results. The interface looks similar as well. In the top left corner, you can select the gps_car_id of the Rolling Stock you want to analyze. Then the algorithm lists all of the GPS Reports in the first column.
 
