@@ -1,0 +1,13 @@
+{
+  "name": "website",
+  "homepage": "https://github.com/ucl-team-8/website",
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "",
+  "private": true,
+  "dependencies": {
+    "bootstrap-sass": "~3.3.6",
+    "jquery": "~2.1.4"
+  }
+}
