@@ -1,6 +1,6 @@
 $(function() {
 
-  var headings = $(".homepage-content").find("h1");
+  var headings = $(".site-content").find("h2");
   var contents = $("#table-of-contents");
 
   var listOfHeaders = contents.find(".headers");

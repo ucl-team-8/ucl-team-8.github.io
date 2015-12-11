@@ -1,0 +1,20 @@
+---
+layout: page
+---
+
+<div class="site-content">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+
+      {% capture markdown %}{% include_relative _prototype.md %}{% endcapture %}
+      {{ markdown | markdownify }}
+
+      {% capture markdown %}{% include_relative _user-interface.md %}{% endcapture %}
+      {{ markdown | markdownify }}
+
+      {% capture markdown %}{% include_relative _testing.md %}{% endcapture %}
+      {{ markdown | markdownify }}
+
+    </div>
+  </div>
+</div>

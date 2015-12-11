@@ -1,4 +1,4 @@
-.homepage-intro {
+.site-masthead {
   background-color: #eee;
   text-align: center;
   padding: 40px 0;
@@ -13,12 +13,12 @@
     margin: 1em 0;
   }
 
-  iframe {
+  .video {
     margin: 20px 0;
   }
 }
 
-.homepage-content {
+.site-content {
   font-size: 17px;
   line-height: 1.5;
 
@@ -36,7 +36,7 @@
   }
 
   h3 {
-    font-size: 1.0625em;
+    font-size: 1em;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: .06em;
