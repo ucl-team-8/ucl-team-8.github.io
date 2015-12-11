@@ -14,15 +14,13 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
+                  {% for item in site.data.navigation %}
                     <li>
-                        <a href="{{ site.baseurl }}/about">About</a>
+                      <a href="{{ site.baseurl }}{{ item.url }}">
+                        {{ item.title }}
+                      </a>
                     </li>
-                    <li>
-                        <a href="{{ site.baseurl }}/project">Project</a>
-                    </li>
-                    <li>
-                        <a href="{{ site.baseurl }}/progress">Progress</a>
-                    </li>
+                  {% endfor %}
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

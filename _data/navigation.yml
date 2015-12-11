@@ -1,0 +1,14 @@
+- title: Home
+  url: /
+
+- title: About
+  url: /about
+
+- title: Research
+  url: /research
+
+- title: Proof of Concept
+  url: /proof-of-concept
+
+- title: Progress
+  url: /progress 
