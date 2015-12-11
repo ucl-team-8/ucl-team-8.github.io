@@ -23,7 +23,7 @@ Below are the requirements in a MoSCoW format:
 ### Could Have:
 
 + Predict a more accurate mileage record
-+ Support more complex scenarios, discussed in under [discoveries](/about#discoveries)
++ Support more complex scenarios, discussed in under [discoveries](/research#discoveries)
 + Visualise the output data
 + Use additional data streams (from [Network Rail data feeds](https://datafeeds.networkrail.co.uk)) to generate more accurate results
 + Test system using real data instead of test data
