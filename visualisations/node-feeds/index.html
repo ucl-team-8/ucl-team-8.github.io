@@ -1,0 +1,35 @@
+<html>
+
+<head>
+  <title>JSON analyser</title>
+  <link rel="stylesheet" href="css/main.css">
+  <meta charset="utf-8">
+</head>
+
+<body>
+
+<div id="container">
+  <div id="files">
+    <select name="file" id="select_file">
+      <option selected>Please select</option>
+
+        <option value="output.json">output.json</option>
+
+    </select>
+  </div>
+  <div id="view"></div>
+</div>
+
+<script src="jspm_packages/system.js"></script>
+<script src="config.js"></script>
+<script>
+
+if (window.System) {
+  System.import('src/main');
+} else {
+  document.write("<script src='build.js' charset='utf-8'><\/script>");
+}
+
+</script>
+</body>
+</html>
