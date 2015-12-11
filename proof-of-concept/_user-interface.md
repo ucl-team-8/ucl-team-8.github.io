@@ -1,9 +1,7 @@
 # User Interface
 
-    TODO: Add pictures + wireframe?
+The user interface of our application would have a map, where we visualize all of the Services and Rolling Stock in different colors. Then another section would list all of the units that have been identified as not matching their services. Also, there will be an option to change the matching parameters like time and distance between Tiplocs. Finally, you can also select a particular Rolling Stock or Service on the map in order to get more information on it.
 
-We would like to have a couple of different screens, each displaying the results in a different way. First of all, the first screen will display all the changes that have already happened. Hence, the user can have a quick view if all the Rolling Stock are following the Diagrams or if something has not gone according to plan.
+Hence, the prototype application should only be a single page. A sketch of that page is provided below.
 
-Then, the user will also be able to select a particular Rolling Stock, and see all of the GPS Reports and all of the services that it might have run in a similar fashion than our second visualization.
-
-Next, the user can also select to see the Diagrams of what actually happened and compare them to the actual Diagrams.
+<img src="{{ site.baseurl }}/assets/photos/UI.png">
