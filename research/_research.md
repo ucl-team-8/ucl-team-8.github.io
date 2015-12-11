@@ -86,7 +86,7 @@ There are a couple of examples where GPS does not work well. One of them is in t
 
 The GPS data is considered sensitive information therefore we cannot display any examples.
 
-## Visualisation
+## Visualisations
 
 ### Node Feeds
 
@@ -152,16 +152,26 @@ So the overall infrastructure of our application looks like:
 
     TODO: Add image (Its on drive)
 
-## Algorithms
+## Discoveries
 
-The first algorithm we used was a simple statistical one, and it was used in last year's project. It calculated how likely a Service was run by a particular Rolling Stock by calculating how many Trust Reports match with a GPS Report. Next, we combined that algorithm with our visualization to see how accurate it was. After careful evaluation, we concluded that it was not accurate enough and therefore we had to move on to a more complex version.
+### Trains runnning close to each other
 
-### Statistical Algorithm
+It sometimes happens that 2 services are travelling very close to each other. The current algorithm has difficulties distinguishing which rolling stock ran which service. Hence, in the next iteration of the algorithm, we will track the rolling stock long-term and analyze the headcode of the service to know which general direction it is going.
 
-    TODO: Add link to visualisation
+### Trains running in a loop
 
-Like the first visualization, the statistical algorithm uses D3.js in order to display the results. The interface looks similar as well. In the top left corner, you can select the gps_car_id of the Rolling Stock you want to analyze. Then the algorithm lists all of the GPS Reports in the first column.
+Another issue we came across is trains running in a circle, where we don't know the overall direction they are travelling in.
 
-Next, for all services, we compare all of the Trust Reports to the GPS Reports. Using that data, we can calculate how many Trust Reports match with a GPS Report and calculate the probability of a Rolling Stock running the service.
+### Service run by multiple rolling stock
 
-Finally, we display all of the Services with a high enough probability. Every column, which represents a service, lists all of the Trust events and again, a green circle is shown if the Reports match and a red circle if no match is found.
+Sometimes 2 Rolling Stock seem to run the same service (and they do) but at a certain point they split. Or the other way is possible as well, when 2 Rolling Stock join to run a service together.
+
+### Train travelling behaviours
+
+Another important fact is that different types of trains tend to behave differently. For instance an Empty Coaching Stock is very unpredictable because they are not considered as important as Passenger Trains. They are also more likely to be affected by external factors therefore the algorithm will assign a higher probability of an Empty Coaching Stock changing than for example a Passenger Train. Additionally, some companies may turn the train around to manage crowds.
+
+### Inaccurate reports
+
+The GPS data can sometimes repeately report arrivals and departures of the same train, at the same station, even though the train itself is stationary. This is because the GPS data divides the world up into several areas. If the train is first outside the area according to the GPS and then inside, a report will be generated where it arrives and the other way around. So if a Rolling Stock is parked near the border of an area for several hours, various reports might be generated where the train keeps arriving and departing from the same station.
+
+    TODO: Include picture

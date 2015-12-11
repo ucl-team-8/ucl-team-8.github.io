@@ -6,6 +6,9 @@ layout: page
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
 
+      {% capture markdown %}{% include_relative _requirements.md %}{% endcapture %}
+      {{ markdown | markdownify }}
+
       {% capture markdown %}{% include_relative _prototype.md %}{% endcapture %}
       {{ markdown | markdownify }}
 
