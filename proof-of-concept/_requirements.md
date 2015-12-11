@@ -38,8 +38,49 @@ Currently, our Proof of Concept covers all of the Must Have requirements except 
 
 However we believe that we are on track to cover all the requirements. We are already working on improving the algorithm and si,ulating a real-time environment.
 
-## Use Cases
+# Use Cases
 
 To describe the system and its requirements to a further extend, we will use some use cases.
 
-    TODO: See drive for use cases
+{% for case in site.data.use_cases %}
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th><strong>Use Case:</strong> {{ case.name }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>ID:</strong> {{ case.id }}</td>
+    </tr>
+    <tr>
+      <td><strong>Brief description:</strong>
+      {{ case.description | markdownify }}</td>
+    </tr>
+    <tr>
+      <td><strong>Primary actor(s):</strong>
+      {{ case.primary_actor | markdownify }}</td>
+    </tr>
+    <tr>
+      <td><strong>Secondary actor(s):</strong>
+      {{ case.secondary_actor | markdownify }}</td>
+    </tr>
+    <tr>
+      <td><strong>Precondition(s):</strong>
+      {{ case.preconditions | markdownify }}</td>
+    </tr>
+    <tr>
+      <td><strong>Main flow:</strong>
+      {{ case.main_flow | markdownify }}</td>
+    </tr>
+    <tr>
+      <td><strong>Postcondition(s):</strong>
+      {{ case.postconditions | markdownify }}</td>
+    </tr>
+    <tr>
+      <td><strong>Alternative flows:</strong>
+      {{ case.alternative_flows | markdownify }}</td>
+    </tr>
+  </tbody>
+</table>
+{% endfor %}
