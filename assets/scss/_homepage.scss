@@ -88,6 +88,11 @@
         color: black;
       }
     }
+
+    @media (max-width: $screen-md-min) {
+      position: static !important;
+      width: auto !important;
+    }
   }
 
 }
