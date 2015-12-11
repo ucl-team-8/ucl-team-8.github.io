@@ -12,6 +12,12 @@ layout: page
         <h3><a href="{{ report.url }}">{{ report.title }}</a></h3>
       {% endfor %}
 
+      <h1>Client Meeting Minutes</h1>
+
+      {% for report in site.data.client_meetings %}
+        <h3><a href=" {{ report.url }}">{{ report.title }}</a></h3>
+      {% endfor %}
+
 
       {% capture markdown %}{% include_relative _achievements-and-future-plans.md %}{% endcapture %}
       {{ markdown | markdownify }}

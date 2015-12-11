@@ -34,6 +34,10 @@ Below are the requirements in a MoSCoW format:
 + Compare the milage record obtained from the algorithm to the milage record calculated from all GPS events
 + Handle situations where Rolling Stock go to the maintenance depot after running the Services
 
+Currently, our Proof of Concept covers all of the Must Have requirements except for supporting a real-time environment and output a list of the units which have been identified as not matching their planned services. Instead, it returns the probability of a Rolling Stock running a Service. Therefore in the current state it still needs human assistance.
+
+However we believe that we are on track to cover all the requirements. We are already working on improving the algorithm and si,ulating a real-time environment.
+
 ## Use Cases
 
 To describe the system and its requirements to a further extend, we will use some use cases.
