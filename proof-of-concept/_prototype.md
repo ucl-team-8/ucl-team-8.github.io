@@ -20,4 +20,4 @@ Finally, we display all of the Services with a high enough probability. Every co
 
 ## API Endpoints
 
-Our prototype uses two main API endpoints to serve data, one for GPS and the other for TRUST data. These are used to fuel the data visualisations. They are located at [**/events/gps.json**](http://	atos-service.herokuapp.com/events/gps.json) and [**/events/trust.json**](http://atos-service.herokuapp.com/events/trust/json)
+Our prototype uses two main API endpoints to serve data, one for GPS and the other for TRUST data. These are used to fuel the data visualisations. They are located at [**/events/gps.json**](http://	atos-service.herokuapp.com/events/gps.json) and [**/events/trust.json**](http://atos-service.herokuapp.com/events/trust.json)
