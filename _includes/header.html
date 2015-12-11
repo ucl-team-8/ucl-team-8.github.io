@@ -15,7 +15,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                   {% for item in site.data.navigation %}
-                    <li>
+                    <li {% if page.url == item.url %}class="active"{% endif %}>
                       <a href="{{ site.baseurl }}{{ item.url }}">
                         {{ item.title }}
                       </a>

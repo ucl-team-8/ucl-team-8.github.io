@@ -180,4 +180,6 @@ Another important fact is that different types of trains tend to behave differen
 
 ## Inaccurate reports
 
+<img src="{{ site.baseurl }}/assets/photos/interesting_data_point.png" style="height: 200px; float: right;"/>
+
 The GPS data can sometimes repeatedly report arrivals and departures of the same train, at the same station, even though the train itself is stationary. This is because the GPS data divides the world up into several areas. If the train is first outside the area according to the GPS and then inside, a report will be generated where it arrives and the other way around. So if a Rolling Stock is parked near the border of an area for several hours, various reports might be generated where the train keeps arriving and departing from the same station.
