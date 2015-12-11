@@ -6,6 +6,8 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://students.cs.ucl.ac.uk" # the base hostname & protocol for your site
 timezone: "Europe/London"
 
+github_username: ucl-team-8
+
 # Build settings
 
 permalink: /blog/:year/:month/:day/:title/

@@ -23,7 +23,7 @@ Below are the requirements in a MoSCoW format:
 ### Could Have:
 
 + Predict a more accurate mileage record
-+ Support more complex scenarios, discussed in under [discoveries](#discoveries)
++ Support more complex scenarios, discussed in under [discoveries](/about#discoveries)
 + Visualise the output data
 + Use additional data streams (from [Network Rail data feeds](https://datafeeds.networkrail.co.uk)) to generate more accurate results
 + Test system using real data instead of test data
@@ -42,45 +42,4 @@ However we believe that we are on track to cover all the requirements. We are al
 
 To describe the system and its requirements to a further extend, we will use some use cases.
 
-{% for case in site.data.use_cases %}
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th><strong>Use Case:</strong> {{ case.name }}</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>ID:</strong> {{ case.id }}</td>
-    </tr>
-    <tr>
-      <td><strong>Brief description:</strong>
-      {{ case.description | markdownify }}</td>
-    </tr>
-    <tr>
-      <td><strong>Primary actor(s):</strong>
-      {{ case.primary_actor | markdownify }}</td>
-    </tr>
-    <tr>
-      <td><strong>Secondary actor(s):</strong>
-      {{ case.secondary_actor | markdownify }}</td>
-    </tr>
-    <tr>
-      <td><strong>Precondition(s):</strong>
-      {{ case.preconditions | markdownify }}</td>
-    </tr>
-    <tr>
-      <td><strong>Main flow:</strong>
-      {{ case.main_flow | markdownify }}</td>
-    </tr>
-    <tr>
-      <td><strong>Postcondition(s):</strong>
-      {{ case.postconditions | markdownify }}</td>
-    </tr>
-    <tr>
-      <td><strong>Alternative flows:</strong>
-      {{ case.alternative_flows | markdownify }}</td>
-    </tr>
-  </tbody>
-</table>
-{% endfor %}
+    TODO: See drive for use cases
