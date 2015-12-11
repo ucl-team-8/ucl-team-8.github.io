@@ -126,7 +126,7 @@ We receive data in various different sources (JSON, CSV, text files). Therefore 
 
 Since some of the data is very inconsistent and is missing several values quite often, we first considered a NoSQL database since it would make storing the data very easy. However, we noticed some relations between several data sources that we could express very naturally in an SQL database. Additionally, our algorithm will be querying and joining the data very often. Therefore the advantages of using an SQL database outweighed the disadvantages.
 
-### Why PostgeSQL?
+### Why PostgreSQL?
 
 Now that we have decided to use an SQL database, we still had to choose from a wide range of options. After some research we found that PostgreSQL would be the most appropriate for several reasons:
 
