@@ -21,6 +21,7 @@ exclude:
   - bower.json
   - gulpfile.js
   - deploy.sh
+  - assets/bower_components
 
 sass:
   sass_dir: assets/scss
