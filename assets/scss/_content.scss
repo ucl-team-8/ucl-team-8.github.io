@@ -1,0 +1,122 @@
+.site-content {
+  font-size: 17px;
+  line-height: 1.5;
+
+  .table {
+    th {
+      background-color: #eee;
+    }
+  }
+
+  a {
+    text-decoration: underline;
+
+    &:hover {
+      color: #555;
+    }
+  }
+
+  h1 {
+    font-size: 2em;
+    margin: 0 0 1em;
+    padding: 1.5em 0 0.25em;
+    border-bottom: 1px solid #ddd;
+  }
+
+  h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 1.5em 0 .75em;
+  }
+
+  h3 {
+    font-size: 1em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    margin: 1.5em 0 .75em;
+  }
+
+  h4 {
+    margin: 1.25em 0 .5em;
+  }
+
+  #table-of-contents {
+    top: 40px;
+    width: 200px;
+
+    .headings {
+      font-size: 1.1em;
+      margin-top: 40px;
+      position: relative;
+
+      &:before {
+        content: '';
+        position: absolute;
+        display: block;
+        top: 1.3em;
+        left: .45em;
+        width: .16em;
+        background-color: #ccc;
+        bottom: 1.3em;
+      }
+
+      li {
+        padding-left: 0.8em;
+        position: relative;
+
+        &.active:before {
+          border-color: #444;
+        }
+
+        &:before {
+          content: '';
+          position: absolute;
+          border-radius: 40px;
+          width: 1em;
+          height: 1em;
+          top: 50%;
+          left: 0;
+          margin-top: -0.5em;
+          border: .2em solid #ccc;
+          background-color: white;
+          transition: border-color 100ms linear;
+        }
+
+        &.active {
+          border-color: #555;
+        }
+      }
+
+      a {
+        font-weight: 500;
+        color: #aaa;
+        margin: 0;
+        padding: 6px 15px;
+        text-decoration: none;
+        line-height: 1.2;
+        transition: color 100ms linear;
+
+        &:hover {
+          color: #666;
+          background-color: transparent;
+        }
+
+        &:focus {
+          background-color: inherit;
+        }
+      }
+
+      li.active a {
+        color: black;
+        background-color: transparent;
+      }
+    }
+
+    @media (max-width: $screen-md-min) {
+      position: static !important;
+      width: auto !important;
+    }
+  }
+
+}
