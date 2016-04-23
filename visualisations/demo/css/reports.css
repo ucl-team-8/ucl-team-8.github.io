@@ -1,0 +1,115 @@
+.right-pane {
+  overflow: scroll;
+}
+
+.segments-container {
+  display: flex;
+  align-items: flex-start;
+  min-height: 100%;
+  cursor: default;
+}
+
+.segment {
+  border-right: 1px solid #ccc;
+  flex: 0;
+  min-height: 100%;
+}
+
+.segment:hover {
+  background: #fafafa;
+}
+
+.segment.type-service {
+  border-right: 3px solid #ddd;
+}
+
+.segment .header {
+  height: 6em !important;
+  padding: 0 1.5em;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.header .heading {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #444;
+  text-transform: uppercase;
+  margin: 1em 0 .6em;
+}
+
+.heading span {
+  padding: .23em .5em;
+  border-radius: 2em;
+}
+
+.header .explanation {
+  font-size: 1.2em;
+  color: #999;
+}
+
+.type-added .heading span, .type-unchanged .heading span {
+  background: #17952F;
+  color: white;
+}
+
+.type-removed .heading span {
+  background: #AC1F1F;
+  color: white;
+}
+
+.header .explanation .matched {
+  color: #17952F;
+}
+
+.header .explanation .not-matched {
+  color: #AC1F1F;
+}
+
+.header .explanation b {
+  color: #555;
+}
+
+.report circle {
+  fill: white;
+  stroke: #b8b8b8;
+  stroke-width: 2px;
+}
+
+.report {
+  font-family: sans-serif;
+  font-size: 10px;
+  color: black;
+}
+
+.tiploc {
+  font-weight: bold;
+}
+
+.event-type {
+  fill: #999;
+}
+
+.report .time {
+  fill: #999;
+  text-anchor: end;
+}
+
+.bar {
+  stroke-width: 2px;
+  stroke: #b8b8b8;
+}
+
+/* Trust */
+
+.trust .report circle,
+.trust .bar {
+  stroke: #50BF6E;
+}
+
+/* GPS */
+
+.gps .report circle,
+.gps .bar {
+  stroke: #B78450;
+}

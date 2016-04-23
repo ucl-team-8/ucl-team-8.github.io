@@ -1,0 +1,43 @@
+body {
+  display: flex;
+  align-items: stretch;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.container {
+  flex: 1;
+  display: flex;
+  align-items: stretch;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.left-pane {
+  display: flex;
+  flex: 2;
+  max-width: 22em;
+}
+
+.middle-pane {
+  display: flex;
+  flex: 4;
+  position: relative;
+}
+
+.right-pane {
+  display: flex;
+  flex: 6;
+}
+
+.current-time {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.4em;
+  font-weight: bold;
+  color: rgba(0,0,0,.7);
+  z-index: 10;
+}
