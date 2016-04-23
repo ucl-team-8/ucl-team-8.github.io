@@ -35496,6 +35496,10 @@ $__System.register("1", ["49", "72", "74", "75", "76", "77", "81", "82", "85", "
     var selected = window.selected;
     // let serviceSegments = getSegmentsMatchingService(window.segments, selected);
     var serviceSegments = getSegmentsFromSelected(selected);
+    if (routeMap.isEmpty()) {
+      var serviceSegment = _.find(serviceSegments, { type: "service" });
+      if (serviceSegment) routeMap.plotServices([serviceSegment.trust]);
+    }
     renderSegments(segmentsContainer.node(), serviceSegments, routeMap);
   }
 
@@ -35687,8 +35691,8 @@ $__System.register("1", ["49", "72", "74", "75", "76", "77", "81", "82", "85", "
         console.log("selecting", serviceKey);
         window.selected = serviceKey;
         // subscribe(serviceKey);
+        routeMap.plot([]);
         render();
-        // routeMap.plot([]);
       };
 
       /* =============================================================================
