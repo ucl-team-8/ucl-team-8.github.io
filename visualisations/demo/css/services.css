@@ -1,0 +1,117 @@
+.services-container {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+  background: #f6f6f6;
+  overflow-y: scroll;
+  border-right: 3px solid #ddd;
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-size: 1.2em;
+  background: #ddd;
+  color: #555;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: .25em .65em;
+  flex: 0;
+}
+
+.service-search {
+  margin: 0;
+  flex: 0;
+}
+
+.service-search input {
+  width: 100%;
+  font-size: 1.4em;
+  border: 0;
+  border-bottom: 1px solid #ccc;
+  padding: 7px;
+  outline: none;
+}
+
+.services {
+  flex: 1;
+  overflow: scroll;
+}
+
+.service {
+  font-size: 1.2em;
+  line-height: 1.1;
+  padding: .75em;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background 200ms linear;
+}
+
+.service.selected,
+.service.selected:hover {
+  background-color: #ebebeb;
+}
+
+.service:hover {
+  background: rgba(255,255,255,.25);
+}
+
+.service .metadata {
+  flex: 1;
+}
+
+.service .matchings {
+  flex: 0;
+}
+
+.matchings span {
+  background: #A1A1A1;
+  color: white;
+  padding: 2px 5px;
+  margin-right: 1px;
+}
+
+.matchings span:first-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding-left: 6px;
+}
+
+.matchings span:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding-right: 6px;
+  margin-right: 0;
+}
+
+.matchings span.added {
+  background: #87C686;
+}
+
+.matchings span.removed {
+  background: #b96b6e;
+}
+
+.service .departure {
+  color: rgba(0,0,0,.5);
+  font-size: 1em;
+  font-weight: 700;
+}
+
+.service .origin {
+  font-weight: 700;
+}
+
+.service h3 {
+  font-weight: 400;
+  margin: .2em 0 0;
+  color: rgba(0,0,0,.5);
+}
+
+.service .headcode {
+  color: black;
+  font-weight: bold;
+}
