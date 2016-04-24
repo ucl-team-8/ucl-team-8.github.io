@@ -18,6 +18,8 @@ On the left are all the **services** that the algorithm has seen so far. There a
 - **gray** is the number of matchings found that **did** already exist in the allocations
 - **red** is the number of matchings that **did** exist in the allocations, but are **wrong** according to the algorithm
 
+The services that are "interesting" (red and green) are shown first in the list, and the "boring" (gray) are last.
+
 The **search field** at the top allows searching for:
 
 - a headcode (e.g. `2C07`)
