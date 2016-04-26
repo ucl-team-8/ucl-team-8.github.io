@@ -31,7 +31,7 @@ Below are the requirements in a MoSCoW format:
 ### Would Like:
 
 + Return the data in the same form as the diagrams and highlights where changes have happened
-+ Compare the milage record obtained from the algorithm to the milage record calculated from all GPS events
++ Compare the mileage record obtained from the algorithm to the milage record calculated from all GPS events
 + Handle situations where Rolling Stock go to the maintenance depot after running the Services
 
 Currently, our Proof of Concept covers all of the Must Have requirements except for supporting a real-time environment and output a list of the units which have been identified as not matching their planned services. Instead, it returns the probability of a Rolling Stock running a Service. Therefore in the current state it still needs human assistance.
