@@ -3,5 +3,8 @@ layout: page
 permalink: /requirements/
 ---
 
+{% capture markdown %}{% include_relative _background.md %}{% endcapture %}
+{{ markdown | markdownify }}
+
 {% capture markdown %}{% include_relative _requirements.md %}{% endcapture %}
 {{ markdown | markdownify }}
