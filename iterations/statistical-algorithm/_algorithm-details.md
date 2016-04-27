@@ -1,4 +1,4 @@
-This is the **final iteration** of the algorithm. It took many ideas and evaluations to reach this stage, some of which weren't documented, and others that fortunately were. If you're interested in precursors to the ideas discussed here, read about our [first]({{ site.baseurl }}/iterations/simple-algorithm) and [second]({{ site.baseurl }}/iterations/segments-algorithm) iterations. 
+This is the **final iteration** of the algorithm. It took many ideas and evaluations to reach this stage, some of which weren't documented, and others that fortunately were. If you're interested in precursors to the ideas discussed here, read about our [first]({{ site.baseurl }}/iterations/simple-algorithm) and [second]({{ site.baseurl }}/iterations/segments-algorithm) iterations.
 {: .lead}
 
 # Summary
@@ -11,7 +11,7 @@ The algorithm is composed of multiple layers—and effectively, multiple compone
   - the properties of a service matching, calculated by the service matcher
   - the (genius) allocations given, as part of the extract
 
-# Detailed explanation
+# Detailed Explanation
 
 ## Simulator
 

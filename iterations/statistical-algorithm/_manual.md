@@ -155,7 +155,7 @@ depending on which data set you would like to import.
 └── ...
 ~~~
 
-# User manual
+# User Manual
 
 ## UI
 
