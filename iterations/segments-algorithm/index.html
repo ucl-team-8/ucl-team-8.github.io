@@ -3,4 +3,5 @@ layout: iteration
 permalink: /iterations/segments-algorithm/
 ---
 
-fill me in axel
+{% capture markdown %}{% include_relative _segments.md %}{% endcapture %}
+{{ markdown | markdownify }}
