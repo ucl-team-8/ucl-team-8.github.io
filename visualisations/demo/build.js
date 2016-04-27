@@ -35445,7 +35445,7 @@ $__System.register("ae", ["77", "86"], function (_export) {
           return d.event_time >= segment.start && d.event_time <= segment.end;
         });
       }
-      segment.trust = trust;
+      segment.trust = _.sortBy(trust, "event_time");
     }
 
     if (segment.gps == null && unitKey) {
@@ -35456,7 +35456,7 @@ $__System.register("ae", ["77", "86"], function (_export) {
           return d.event_time >= segment.start && d.event_time <= segment.end;
         });
       }
-      segment.gps = gps;
+      segment.gps = _.sortBy(gps, "event_time");
     }
   }
   return {
