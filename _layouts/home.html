@@ -30,11 +30,48 @@ layout: default
 </div>
 
 <div class="site-content">
+  <div class="features">
+    <div class="wrapper container-fluid">
+
+      <div class="row">
+        <div class="col-md-3 col-sm-6">
+          <div class="feature">
+            <h3>Real-time processing</h3>
+            <p>Runs in real-time and produces results incrementally and efficiently, altering only the part of the result that is affected by the changes.</p>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+          <div class="feature">
+            <h3>Consolidates 3 data sources</h3>
+            <p>Combines 2 real-time data streams and daily allocations data to determine the most likely matchings of the day.</p>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+          <div class="feature">
+            <h3>Visualisation of results</h3>
+            <p>Allows user to <a href="{{ site.baseurl }}/visualisations/demo/">see the matchings</a> and provides the data used to make a decision, so they can analyse the matchings.</p>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+          <div class="feature">
+            <h3>Search for matchings</h3>
+            <p>Search for services and units of interest, or find all the cases where the algorithm disagrees with the data given.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="wrapper container-fluid">
+
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
         {{ content }}
       </div>
     </div>
+
   </div>
 </div>
