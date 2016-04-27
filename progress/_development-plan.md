@@ -28,14 +28,10 @@ Initially, we tried solving some of these problems by improving this iteration o
 
 ## Segment-generating algorithm
 
-The idea for this algorithm came from the fact that we could represent the output of the algorithm very naturally as `segments`. These would consist of reports from one specific unit and one specific service. Some more specific information can be found [here](link).
-
-// TODO: Include link above
+The idea for this algorithm came from the fact that we could represent the output of the algorithm very naturally as `segments`. These would consist of reports from one specific unit and one specific service. Some more specific information can be found [here]({{ site.baseurl }}/iterations/segments-algorithm).
 
 Together with this algorithm, we also decided to improve upon the visualisation. First of all, instead of displaying the reports linearly, we display them using a non-linear time scale. On top of that, all of the reports were displayed on a map to allow a user to quickly see if 2 reports actually matched.
 
 ## Layered approach
 
-Since the segment-generating exploded in complexity, we wanted to design a simpler algorithm, with the same performance. But to avoid any concurrency issues, we designed it in several layers, which could all run individually by separate workers. More information can be found [here](link).
-
-// TODO: Include link
+Since the segment-generating exploded in complexity, we wanted to design a simpler algorithm, with the same performance. But to avoid any concurrency issues, we designed it in several layers, which could all run individually by separate workers. More information can be found [here]({{ site.baseurl }}/iterations/segments-algorithm).
