@@ -44,30 +44,33 @@
         background-color: #98592b;
       }
     }
+
+    .disabled {
+      background-color: #ccc !important;
+      cursor: default;
+    }
   }
 }
 
-.site-content {
+.features {
+  border-top: 3px solid #ccc;
+  border-bottom: 3px solid #ccc;
+  background: #fafafa;
+}
 
-  .features {
-    border-top: 3px solid #ccc;
-    border-bottom: 3px solid #ccc;
-    background: #fafafa;
+.feature {
+  margin: 1.75em 0;
+
+  h3 {
+    font-size: 1.25em;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.4;
+    margin: 0 0 .75em;
   }
 
-  .feature {
-    margin: 1.75em 0;
-
-    h3 {
-      font-size: 1em;
-      line-height: 1.4;
-      margin: 0 0 .75em;
-    }
-
-    p {
-      font-size: 0.9em;
-    }
-
+  p {
+    font-size: 1.1em;
   }
 
 }

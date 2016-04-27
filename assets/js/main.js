@@ -19,6 +19,18 @@ $(function() {
     }
   })
 
+  $('.open-video').on('click', function(event) {
+
+    event.preventDefault();
+
+    $(this).addClass('disabled')
+      .attr('href', '');
+
+    $('.video-container').slideDown();
+
+    return false;
+  });
+
   $('body').scrollspy({ target: '#table-of-contents', offset: 50 });
 
   $('a[href*=#]:not([href=#])').click(function() {
