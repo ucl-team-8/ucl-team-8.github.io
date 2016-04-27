@@ -1,39 +1,37 @@
 # Project Requirements
 
-Below are the requirements in a MoSCoW format:
+The two main deliverables in the project can be summarised concisely as
 
-### Must Have:
+1. Efficient real time service matching algorithm
+2. Prototype application using this algorithm to match units and services based on data received and display output
 
-+ Train Service Real Time Pattern Matching Algorithm
-  + Use data from GPS, real time train service data (TRUST), train schedule data and train diagrams
-  + Operate in real-time
-  + Return a list of units which have been identified as not matching their planned services
-  + Support only basic scenarios
-+ Prototype Application that uses the algorithm to match Rolling Stock to Services in real time
-  + Display the output of the algorithm
+    However, this can be broken down into many more detailed requirements, that is used for managing the development, such as deciding what to include in each iteration, these are listed in the Moscow format below :
 
-### Should Have:
+## Must have
 
-+ The prototype application simulates a real-time environment
-+ You can select any Rolling Stock, to get more accurate information
-+ Track all Rolling Stock on a long-term to improve accuracy
-+ Use additional information in the headcode of the Service to make predictions
-+ Deploy system on [Heroku](https://heroku.com)
+- The algorithm should work in real time. This comes with several sub-goals that needs to be achieved namely :
+  - Consume data feeds in real time (Feeds that needs to be consumed in real time include TRUST data and GPS data)
+  - Store newly consumed data in a suitable format for processing as they come in
+  - Process the pattern matching with the new data along with static data sources( Schedule data, Diagram data)
+- The prototype also has several components to it
+  - Return list of units that have diverged
 
-### Could Have:
+## Should have
 
-+ Predict a more accurate mileage record
-+ Support more complex scenarios, discussed in under [discoveries](/research#discoveries)
-+ Visualise the output data
-+ Use additional data streams (from [Network Rail data feeds](https://datafeeds.networkrail.co.uk)) to generate more accurate results
-+ Test system using real data instead of test data
+- You can select any Rolling Stock, to get more accurate information
+- Track all Rolling Stock throughout the day
+- Deploy system to be accessible via the web
 
-### Would Like:
+## Could have
 
-+ Return the data in the same form as the diagrams and highlights where changes have happened
-+ Compare the mileage record obtained from the algorithm to the milage record calculated from all GPS events
-+ Handle situations where Rolling Stock go to the maintenance depot after running the Services
+- Support more complex scenarios, discussed in under discoveries
+- Visualise the output data
+- Test system using real data instead of test data
 
-Currently, our Proof of Concept covers all of the Must Have requirements except for supporting a real-time environment and output a list of the units which have been identified as not matching their planned services. Instead, it returns the probability of a Rolling Stock running a Service. Therefore in the current state it still needs human assistance.
+## Would have
 
-However we believe that we are on track to cover all the requirements. We are already working on improving the algorithm and si,ulating a real-time environment.
+- Return the data in the same form as the diagrams and highlights where changes have happened
+- Compare the milage record obtained from the algorithm to the milage record calculated from all GPS events
+- Handle situations where Rolling Stock go to the maintenance depot after running the Services
+
+Our prototype as of April 2016 satisfies all of the must and should have requirements. We have not been able to test the system using real-time data, which is one of our could have requirements but we have tested it on different static data sets. This is almost as good as it helped us to quantify how well our algorithm works on different datasets.
