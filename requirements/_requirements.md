@@ -1,11 +1,11 @@
 # Project Requirements
 
-The two main deliverables in the project can be summarised concisely as
+The two main deliverables in the project can be summarised concisely as:
 
-1. Efficient real time service matching algorithm
+1. Efficient real-time service matching algorithm
 2. Prototype application using this algorithm to match units and services based on data received and display output
 
-However, this can be broken down into many more detailed requirements, that is used for managing the development, such as deciding what to include in each iteration, these are listed in the Moscow format below :
+However, this can be broken down into many more detailed requirements&emdash;these are listed in the MoSCoW format below:
 
 ## Must have
 
