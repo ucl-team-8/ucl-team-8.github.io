@@ -35553,6 +35553,51 @@ $__System.register("1", ["49", "72", "74", "75", "76", "77", "81", "82", "85", "
   //   socket.emit('unsubscribe', serviceKey);
   // }
 
+  function addSelectedClass() {
+    servicesContainer.selectAll(".service").classed("selected", function (d) {
+      return sameService(d, window.selected);
+    });
+  }
+
+  /* =============================================================================
+     Algorithm 1 - Socket segment synchronisation
+   */
+
+  // socket.on('update', function(data) {
+  //   data = JSON.parse(data);
+  //   let index = getSegmentWithId(data.id);
+  //   if(index == -1) {
+  //     // TODO: Segment with id was not found, something is broken
+  //   } else {
+  //     segments[index] = getSegment(data);
+  //     let service = getServiceKey(segments[index]);
+  //     if (_.isEqual(service, window.selected)) {
+  //       rerenderSegments();
+  //     }
+  //   }
+  // });
+  //
+  // // The data is the id
+  // socket.on('delete', function(data) {
+  //   data = JSON.parse(data);
+  //   let index = getSegmentWithId(data);
+  //   if(index != -1) {
+  //     let segment = segments.splice(index, 1)[0];
+  //     let service = getServiceKey(segment);
+  //     if (_.isEqual(service, window.selected)) {
+  //       rerenderSegments();
+  //     }
+  //   }
+  // });
+  //
+  // socket.on('new', function(data) {
+  //   data = JSON.parse(data);
+  //   segments.push(getSegment(data));
+  // });
+  //
+  // function getSegmentWithId(id) {
+  //   return _.findIndex(segments, d => d.id === id);
+  // }
   return {
     setters: [function (_6) {
       io = _6["default"];
@@ -35692,48 +35737,9 @@ $__System.register("1", ["49", "72", "74", "75", "76", "77", "81", "82", "85", "
         window.selected = serviceKey;
         // subscribe(serviceKey);
         routeMap.plot([]);
-        render();
+        rerenderSegments();
+        addSelectedClass();
       };
-
-      /* =============================================================================
-         Algorithm 1 - Socket segment synchronisation
-       */
-
-      // socket.on('update', function(data) {
-      //   data = JSON.parse(data);
-      //   let index = getSegmentWithId(data.id);
-      //   if(index == -1) {
-      //     // TODO: Segment with id was not found, something is broken
-      //   } else {
-      //     segments[index] = getSegment(data);
-      //     let service = getServiceKey(segments[index]);
-      //     if (_.isEqual(service, window.selected)) {
-      //       rerenderSegments();
-      //     }
-      //   }
-      // });
-      //
-      // // The data is the id
-      // socket.on('delete', function(data) {
-      //   data = JSON.parse(data);
-      //   let index = getSegmentWithId(data);
-      //   if(index != -1) {
-      //     let segment = segments.splice(index, 1)[0];
-      //     let service = getServiceKey(segment);
-      //     if (_.isEqual(service, window.selected)) {
-      //       rerenderSegments();
-      //     }
-      //   }
-      // });
-      //
-      // socket.on('new', function(data) {
-      //   data = JSON.parse(data);
-      //   segments.push(getSegment(data));
-      // });
-      //
-      // function getSegmentWithId(id) {
-      //   return _.findIndex(segments, d => d.id === id);
-      // }
     }
   };
 });
