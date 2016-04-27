@@ -15,17 +15,18 @@ However, this can be broken down into many more detailed requirements&emdash;the
   - Process the pattern matching with the new data along with static data sources( Schedule data, Diagram data)
 - The prototype also has several components to it
   - Return list of units that have diverged
+  - Visualise the output data 
 
 ## Should have
 
 - You can select any Rolling Stock, to get more accurate information
 - Track all Rolling Stock throughout the day
 - Deploy system to be accessible via the web
+- Search by service headcode, or unit ID
 
 ## Could have
 
 - Support more complex scenarios, discussed in under discoveries
-- Visualise the output data
 - Test system using real data instead of test data
 
 ## Would have
@@ -34,4 +35,4 @@ However, this can be broken down into many more detailed requirements&emdash;the
 - Compare the milage record obtained from the algorithm to the milage record calculated from all GPS events
 - Handle situations where Rolling Stock go to the maintenance depot after running the Services
 
-Our prototype as of April 2016 satisfies all of the must and should have requirements. We have not been able to test the system using real-time data, which is one of our could have requirements but we have tested it on different static data sets. This is almost as good as it helped us to quantify how well our algorithm works on different datasets.
+Our prototype as of April 2016 satisfies all of the must and should have requirements. We have not been able to test the system using real-time data as we don't have access to ATOS systems, but we have tested it on different static data sets. This is as good as it helped us to quantify how well our algorithm works on different datasets.
