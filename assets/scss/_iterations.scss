@@ -7,6 +7,7 @@
 
   .iteration {
     flex: 1;
+    display: block;
     padding: 1.5em;
     border-right: 1px solid white;
     text-decoration: none;
@@ -21,10 +22,6 @@
 
     &.current {
       background-color: #ddd;
-
-      h2 {
-
-      }
     }
 
     h2 {
@@ -58,13 +55,15 @@
     strong { color: black; }
   }
 
-  @media (max-width: 480px) {
-    .iterations {
-      display: block;
+  @media (max-width: $screen-xs-min) {
 
-      .iteration {
-        display: block;
-      }
+    & > div {
+      display: block;
+    }
+
+    .iteration {
+      display: block;
+      border: none !important;
     }
   }
 }
