@@ -1,7 +1,7 @@
 # Site settings
 
-title: Train Service Real-Time Pattern Matching
-description: A UCL System Engineering project.
+title: Real-Time Train Service Matching
+description: A UCL Systems Engineering project.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://students.cs.ucl.ac.uk" # the base hostname & protocol for your site
 timezone: "Europe/London"
