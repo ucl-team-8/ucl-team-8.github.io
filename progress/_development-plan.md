@@ -32,7 +32,7 @@ The idea for this algorithm came from the fact that we could represent the outpu
 
 // TODO: Include link above
 
-Together with this algorithm, we also decided to improve upon the visualization. First of all, instead of displaying the reports linearly, we display them using a non-linear time scale. On top of that, all of the reports were displayed on a map to allow a user to quickly see if 2 reports actually matched.
+Together with this algorithm, we also decided to improve upon the visualisation. First of all, instead of displaying the reports linearly, we display them using a non-linear time scale. On top of that, all of the reports were displayed on a map to allow a user to quickly see if 2 reports actually matched.
 
 ## Layered approach
 

@@ -1,0 +1,70 @@
+.iterations-nav {
+  background-color: #eee;
+
+  & > div {
+    display: flex;
+  }
+
+  .iteration {
+    flex: 1;
+    padding: 1.5em;
+    border-right: 1px solid white;
+    text-decoration: none;
+
+    &:hover {
+      background-color: #e6e6e6;
+    }
+
+    &:first-child {
+      border-left: 1px solid white;
+    }
+
+    &.current {
+      background-color: #ddd;
+
+      h2 {
+
+      }
+    }
+
+    h2 {
+      font-size: 1.5em;
+      margin: 0 0 .35em;
+    }
+
+    p {
+      color: #777;
+      margin: 0;
+    }
+
+    .latest {
+      font-size: 80%;
+      font-weight: bold;
+      background-color: #40a9cb;
+      margin-left: 2px;
+      color: white;
+      border-radius: 3px;
+      padding: .15em .35em;
+    }
+  }
+
+  .iteration-label {
+    font-size: .9375em;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: .35em;
+
+    strong { color: black; }
+  }
+
+  @media (max-width: 480px) {
+    .iterations {
+      display: block;
+
+      .iteration {
+        display: block;
+      }
+    }
+  }
+}

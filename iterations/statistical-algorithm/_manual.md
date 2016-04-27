@@ -1,12 +1,8 @@
-# Manual
-
-The manual gives you a quick overview of the system and how to get setup for further development and how to use the final proof of concept.
-
-## System Manual
+# System Manual
 
 This part of the manual gives a quick overview of the entire system to understand the underlying structure of the project and how to setup the system.
 
-### Technology Stack
+## Technology Stack
 
 In the following image, you can see an outline of our technology stack.
 
@@ -14,15 +10,15 @@ In the following image, you can see an outline of our technology stack.
 
 We are using the [flask](http://flask.pocoo.org/) web framework together with a [PostgreSQL](http://www.postgresql.org/) database. [SQLAlchemy](http://www.sqlalchemy.org/) and [psycopg2](http://initd.org/psycopg/) are used to write SQL queries to the database in Python. Finally to provide real-time data to the client, we use [Flask-SocketIO](https://flask-socketio.readthedocs.org/en/latest/).
 
-In the front-end, we also use [socket.io](http://socket.io/) to manage the web socket on the client's side. [D3.js](https://d3js.org/) and [leaflet.js](http://leafletjs.com/) are then used to visualize all of the report matchings. Finally other helper libraries used are: [lodash.js](https://lodash.com/), [moment.js](http://momentjs.com/) and [jquery](https://jquery.com/).
+In the front-end, we also use [socket.io](http://socket.io/) to manage the web socket on the client's side. [D3.js](https://d3js.org/) and [leaflet.js](http://leafletjs.com/) are then used to visualise all of the report matchings. Finally other helper libraries used are: [lodash.js](https://lodash.com/), [moment.js](http://momentjs.com/) and [jquery](https://jquery.com/).
 
 Most of the data provided came in a variety of formats. First of all, the diagrams are all txt files. The specifications of what specific characters mean can be found [here](http://www.atoc.org/download/clientfiles/files/RSPDocuments/RSPS5046%2001-00%20Timetable%20Information%20Data%20Feed%20Interface%20Specification.pdf). Most of the other data was in a more comprehensible format such XML (GPS and TRUST reports) and CSV (Unit to GPS mapping and genius allocations).
 
-### Setting Up
+## Setting Up
 
 To get started, you will need to install [pip](https://pip.pypa.io/en/stable/installing/), [git](https://confluence.atlassian.com/bitbucket/set-up-git-744723531.html), [PostgreSQL](http://www.postgresql.org/download/) (and [brew](http://brew.sh/), if you're using a mac).
 
-#### Setting Up the Database
+### Setting Up the Database
 
 Create a postgres database with `psql` (installed with PostgreSQL):
 
@@ -32,7 +28,7 @@ CREATE DATABASE atos WITH OWNER atos;
 GRANT ALL PRIVILEGES ON DATABASE atos TO atos;
 ```
 
-#### Setting Up a Local Environment
+### Setting Up a Local Environment
 
 First, you will need to install `virtualenv` using pip:
 
@@ -72,7 +68,7 @@ Finally, install all dependencies from `requirements.txt`:
 pip install -r requirements.txt
 ```
 
-#### Installing Visualisation Dependencies
+### Installing Visualisation Dependencies
 
 To install `node` and `npm` on a Mac, run:
 
@@ -94,7 +90,7 @@ jspm install
 
 Finally, your local environment should be set up.
 
-#### Creating the Database Tables
+### Creating the Database Tables
 
 We use `Flask-Migrate` to handle database migrations. To create the necessary database tables, run:
 
@@ -102,7 +98,7 @@ We use `Flask-Migrate` to handle database migrations. To create the necessary da
 python manage.py db upgrade
 ```
 
-#### Importing Data
+### Importing Data
 
 You will first need to get a copy of the `locations.tsv` file with all of the TIPLOC locations. This file is not publicly available since it is considered confidential information.
 
@@ -120,7 +116,7 @@ python import/import.py east_coast
 
 depending on which data set you would like to import.
 
-### Folder Structure
+## Folder Structure
 
 ```
 .
@@ -159,9 +155,9 @@ depending on which data set you would like to import.
 └── ...
 ```
 
-## User manual
+# User manual
 
-### UI
+## UI
 
 <a href="{{ site.baseurl }}/visualisations/demo/">
   <img src="{{ site.baseurl }}/assets/photos/demo.png" alt="A demo of the user interface" style="width: 100%"/>
@@ -171,7 +167,7 @@ depending on which data set you would like to import.
 
 The UI is divided up into three vertical panes.
 
-#### Left pane
+### Left pane
 
 On the left are all the **services** that the algorithm has seen so far. There are some numbers in coloured circles:
 
@@ -191,7 +187,7 @@ The **search field** at the top allows searching for:
 
 Selecting a service will show more information in the middle and right pane.
 
-#### Middle pane
+### Middle pane
 
 The middle pane shows a **map** with:
 
@@ -202,7 +198,7 @@ Only the selected service is plotted by default, but you can plot matchings by m
 
 You can also zoom by scrolling (or the **+** and **-** buttons) and pan by dragging. The current time of the simulation is shown in the top right corner (if the simulation is running).
 
-#### Right pane
+### Right pane
 
 The right pane shows matchings of the selected service with different units.
 

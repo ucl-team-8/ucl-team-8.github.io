@@ -37,7 +37,7 @@ A Virtual Environment is a tool to keep all of the Python dependencies in the sa
 
 ## D3.js
 
-D3.js is a JavaScript library for manipulating HTML DOM elements based on data. There are a lot of JavaScript libraries for visualizations, but D3.js is one of the most flexible ones. Even though it might not be easy to learn, the library will allow us to customize everything in the visualization. Additionally, there is a lot of documentation and examples available online that helped us to learn.
+D3.js is a JavaScript library for manipulating HTML DOM elements based on data. There are a lot of JavaScript libraries for visualisations, but D3.js is one of the most flexible ones. Even though it might not be easy to learn, the library will allow us to customize everything in the visualisation. Additionally, there is a lot of documentation and examples available online that helped us to learn.
 
 So the overall infrastructure of our application looks like:
 

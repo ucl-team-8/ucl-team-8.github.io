@@ -1,0 +1,15 @@
+<div class="iterations-nav">
+  <div class="wrapper container-fluid">
+    {% for iteration in site.data.iterations %}
+      <a href="{{ iteration.url }}" class="iteration {% if page.url == iteration.url %}current{% endif %}">
+        <div class="iteration-label">
+          <strong>{{ iteration.label }}</strong>
+          {{ iteration.time }}
+          {% if forloop.last %}<span class="latest">latest</span>{% endif %}
+        </div>
+        <h2>{{ iteration.title }}</h2>
+        <p>{{ iteration.description }}</p>
+      </a>
+    {% endfor %}
+  </div>
+</div>

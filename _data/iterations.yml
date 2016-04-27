@@ -1,0 +1,20 @@
+- label: 1st iteration
+  time: December 2015
+  title: Simple algorithm
+  url: /iterations/simple-algorithm/
+  description: |
+    The algorithm that got the job done.
+
+- label: 2nd iteration
+  time: February 2016
+  title: Segments algorithm
+  url: /iterations/segments-algorithm/
+  description: |
+    The algorithm that got the job done.
+
+- label: 3rd iteration
+  time: April 2016
+  title: Statistical algorithm
+  url: /iterations/statistical-algorithm/
+  description: |
+    The algorithm that got the job done.
