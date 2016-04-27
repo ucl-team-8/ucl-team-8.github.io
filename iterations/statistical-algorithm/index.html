@@ -3,6 +3,12 @@ layout: iteration
 permalink: /iterations/statistical-algorithm/
 ---
 
+{% capture markdown %}{% include_relative _algorithm-details.md %}{% endcapture %}
+{{ markdown | markdownify }}
+
+{% capture markdown %}{% include_relative _achievements.md %}{% endcapture %}
+{{ markdown | markdownify }}
+
 {% capture markdown %}{% include_relative _manual.md %}{% endcapture %}
 {{ markdown | markdownify }}
 
