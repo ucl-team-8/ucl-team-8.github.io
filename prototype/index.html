@@ -3,5 +3,8 @@ layout: page
 permalink: /prototype/
 ---
 
-{% capture markdown %}{% include_relative _user-manual.md %}{% endcapture %}
+{% capture markdown %}{% include_relative _manual.md %}{% endcapture %}
+{{ markdown | markdownify }}
+
+{% capture markdown %}{% include_relative _testing.md %}{% endcapture %}
 {{ markdown | markdownify }}
