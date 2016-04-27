@@ -1,4 +1,4 @@
-# Development plan, iterations and forks in prototypes
+# Development plan
 
 Throughout this project, we have worked on 3 different iterations of the algorithm.
 
