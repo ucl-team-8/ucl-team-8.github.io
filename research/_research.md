@@ -1,6 +1,5 @@
-<p class="lead" style="margin-top: 50px;">
 The data that the algorithm has to consume is very extensive and has a lot of inconsistencies. Understanding the data we are given has been the largest focus of our research, and took a considerable amount of time. Next, we looked into efficient ways of storing everything and technologies that we will use for the back-end and the API. Finally, we analyzed various algorithms and compared their efficiency.
-</p>
+{: .lead}
 
 # Data
 
