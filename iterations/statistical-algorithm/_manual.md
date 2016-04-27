@@ -22,59 +22,59 @@ To get started, you will need to install [pip](https://pip.pypa.io/en/stable/ins
 
 Create a postgres database with `psql` (installed with PostgreSQL):
 
-```
+~~~
 CREATE USER atos WITH PASSWORD 'atos';
 CREATE DATABASE atos WITH OWNER atos;
 GRANT ALL PRIVILEGES ON DATABASE atos TO atos;
-```
+~~~
 
 ### Setting Up a Local Environment
 
 First, you will need to install `virtualenv` using pip:
 
-```
+~~~
 pip install virtualenv
-```
+~~~
 
 After you have virtualenv installed, create a virtual environment:
 
-```
+~~~
 virtualenv venv
-```
+~~~
 
 In your new virtual environment, clone the repository and cd into the correct repository
 
-```
+~~~
 git clone https://github.com/ucl-team-8/service.git service
 cd service
-```
+~~~
 
 Then run these bash commands to set the environment variables in your virtual environment `activate` file:
 
-```
+~~~
 echo "export APP_SETTINGS='config.DevelopmentConfig'" >> venv/bin/activate
 echo "export DATABASE_URL='postgres://atos:atos@localhost/atos'" >> venv/bin/activate
-```
+~~~
 
 Activate your virtual environment by running:
 
-```
+~~~
 source venv/bin/activate
-```
+~~~
 
 Finally, install all dependencies from `requirements.txt`:
 
-```
+~~~
 pip install -r requirements.txt
-```
+~~~
 
 ### Installing Visualisation Dependencies
 
 To install `node` and `npm` on a Mac, run:
 
-```
+~~~
 brew install node
-```
+~~~
 
 If you don't have brew, see installation instructions [here](http://brew.sh/).
 
@@ -82,11 +82,11 @@ To install `node` and `npm` on Windows, download it from [nodejs.org](https://no
 
 After you have `npm`, run:
 
-```
+~~~
 npm install -g jspm
 npm install
 jspm install
-```
+~~~
 
 Finally, your local environment should be set up.
 
@@ -94,9 +94,9 @@ Finally, your local environment should be set up.
 
 We use `Flask-Migrate` to handle database migrations. To create the necessary database tables, run:
 
-```
+~~~
 python manage.py db upgrade
-```
+~~~
 
 ### Importing Data
 
@@ -104,21 +104,21 @@ You will first need to get a copy of the `locations.tsv` file with all of the TI
 
 To import all of the data in the `data` directory, either run:
 
-```
+~~~
 python import/import.py northern_rail
-```
+~~~
 
 or:
 
-```
+~~~
 python import/import.py east_coast
-```
+~~~
 
 depending on which data set you would like to import.
 
 ## Folder Structure
 
-```
+~~~
 .
 ├── algorithm           # Old iteration of the algorithm
 ├── algorithm2          # Improved version of the algorithm
@@ -153,7 +153,7 @@ depending on which data set you would like to import.
 ├── README.md
 ├── requirements.txt    # Python packages used
 └── ...
-```
+~~~
 
 # User manual
 
